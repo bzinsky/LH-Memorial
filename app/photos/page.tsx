@@ -21,7 +21,24 @@ export default async function Page() {
     "use server";
     console.log(formData);
 
+    if (
+      !formData.get("file") ||
+      !formData.get("name") ||
+      !formData.get("description")
+    ) {
+      return;
+    }
+
     const file = formData.get("file") as File;
+
+    // Make sure the file is an image
+    if (!file.type.startsWith("image/")) {
+      return {
+        status: 400,
+        body: "File must be an image",
+      };
+    }
+
     const fileData = await file.arrayBuffer();
     const fileData64 = Buffer.from(fileData).toString("base64");
 
@@ -60,10 +77,16 @@ export default async function Page() {
             className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
             action={onSubmit}
           >
-            <TextInput label="Name" name="name" />
-            <TextAreaInput label="Description" name="description" />
-            {/* Upload image here */}
-            <TextInput label="Upload" type="file" name="file" />
+            <TextInput label="Name" name="name" required />
+            <TextAreaInput label="Description" name="description" required />
+            {/* Upload image here. Only allow actual images */}
+            <TextInput
+              required
+              label="Upload"
+              type="file"
+              name="file"
+              accept="image/*"
+            />
             <SubmitButton />
           </form>
         </div>
