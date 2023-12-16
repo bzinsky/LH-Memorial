@@ -34,8 +34,8 @@ export default async function Condolences() {
             className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
             action={onSubmit}
           >
-            <TextInput label="Name" name="name" />
-            <TextAreaInput label="Message" name="message" />
+            <TextInput label="Name" name="name" required />
+            <TextAreaInput label="Message" name="message" required />
             <SubmitButton />
           </form>
         </div>

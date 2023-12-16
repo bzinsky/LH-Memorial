@@ -56,19 +56,21 @@ export default async function Videos() {
             className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
             action={onSubmit}
           >
-            <TextInput label="Name" name="name" />
+            <TextInput label="Name" name="name" required />
             {/* Require a valid youtube link  */}
             <TextInput
               label="YouTube Link"
               name="link"
               pattern="https://www.youtube.com/(watch\?v=|shorts\/).*"
               title="Must be a valid YouTube video or shorts link"
+              required
             />
             <TextInput
               label="Year"
               name="year"
               pattern="[0-9]{4}"
               title="Must be a valid year"
+              required
             />
             <SubmitButton />
           </form>
