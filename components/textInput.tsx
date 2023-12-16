@@ -49,6 +49,7 @@ export function TextInput({
         id={id}
         type="text"
         placeholder={label}
+        ref={ref}
         {...rest}
       />
     );

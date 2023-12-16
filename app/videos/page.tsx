@@ -12,6 +12,22 @@ interface VideoData {
   createdAt: string;
 }
 
+export function isValidYoutubeLink(link?: string | null): boolean {
+  if (!link) {
+    return false;
+  }
+
+  if (!link.startsWith("https://www.youtube.com")) {
+    return false;
+  }
+
+  if (!link.includes("watch?v=") && !link.includes("shorts/")) {
+    return false;
+  }
+
+  return true;
+}
+
 export default async function Videos() {
   const onSubmit = async (formData: FormData) => {
     // On the server, save the condolence to the R2 store and return the updated videos array
@@ -41,8 +57,19 @@ export default async function Videos() {
             action={onSubmit}
           >
             <TextInput label="Name" name="name" />
-            <TextInput label="YouTube Link" name="link" />
-            <TextInput label="Year" name="year" />
+            {/* Require a valid youtube link  */}
+            <TextInput
+              label="YouTube Link"
+              name="link"
+              pattern="https://www.youtube.com/(watch\?v=|shorts\/).*"
+              title="Must be a valid YouTube video or shorts link"
+            />
+            <TextInput
+              label="Year"
+              name="year"
+              pattern="[0-9]{4}"
+              title="Must be a valid year"
+            />
             <SubmitButton />
           </form>
         </div>
