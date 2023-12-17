@@ -31,7 +31,7 @@ export function TextInput({
           {label}
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline mb-4"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 bg-gray-50 leading-tight focus:outline-none focus:shadow-outline mb-4"
           name={name}
           id={id}
           type="text"

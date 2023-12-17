@@ -15,7 +15,6 @@
     "dev:linux": "npm run cf:proxy & npm run dev"
   },
   "dependencies": {
-    "cf-bindings-proxy": "^0.7.1",
     "next": "14.0.3",
     "photoswipe": "^5.4.3",
     "react": "^18",
@@ -25,10 +24,12 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.8.0",
     "@cloudflare/workers-types": "^4.20231121.0",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "cf-bindings-proxy": "^0.7.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "eslint-plugin-next-on-pages": "^1.8.0",

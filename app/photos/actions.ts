@@ -12,7 +12,12 @@ export interface PhotoData {
   height: number;
 }
 
-export async function onImageSubmit(formData: FormData) {
+export interface ImageFormState {
+  error?: string;
+  success?: boolean;
+}
+
+export async function onImageSubmit(prevState: any, formData: FormData) {
   "use server";
   console.log(formData);
 
@@ -29,8 +34,7 @@ export async function onImageSubmit(formData: FormData) {
   // Make sure the file is an image
   if (!file.type.startsWith("image/")) {
     return {
-      status: 400,
-      body: "File must be an image",
+      error: "File is not an image",
     };
   }
 
@@ -74,4 +78,8 @@ export async function onImageSubmit(formData: FormData) {
 
   // Revalidate the videos page
   revalidatePath("/photos");
+
+  return {
+    success: true,
+  };
 }

@@ -9,10 +9,9 @@ export function YoutubeEmbed({ url }: { url: string }) {
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
     return (
-      <div className="">
+      <div className="w-full">
         <iframe
-          className="aspect-video"
-          height={500}
+          className=""
           src={embedUrl}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -27,10 +26,9 @@ export function YoutubeEmbed({ url }: { url: string }) {
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <div className="">
+    <div className="w-full">
       <iframe
-        className="aspect-video"
-        height={500}
+        className=""
         src={embedUrl}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

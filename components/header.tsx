@@ -20,7 +20,7 @@ export function Header() {
       {/* On small screens, make the navbar wrap */}
       <ul className="flex container justify-between flex-wrap">
         {links.map(({ to, label }) => (
-          <li key={label + to}>
+          <li key={label + to} className="px-2 sm:px-0 py-2 sm:py-0">
             {/*If this is the active link, change the color to indigo*/}
             <Link
               href={to}
