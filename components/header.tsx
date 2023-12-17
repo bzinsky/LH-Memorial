@@ -17,7 +17,8 @@ export function Header() {
 
   return isLoggedIn ? (
     <nav className="sticky top-0 flex justify-center py-6 bg-neutral-900">
-      <ul className="flex container justify-between">
+      {/* On small screens, make the navbar wrap */}
+      <ul className="flex container justify-between flex-wrap">
         {links.map(({ to, label }) => (
           <li key={label + to}>
             {/*If this is the active link, change the color to indigo*/}

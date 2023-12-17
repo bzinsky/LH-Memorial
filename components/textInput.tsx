@@ -23,7 +23,7 @@ export function TextInput({
 
   if (label) {
     return (
-      <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+      <div className="flex flex-col items-center justify-center w-full text-center">
         <label
           className="block text-white text-sm font-bold mb-2"
           htmlFor={name}
@@ -69,7 +69,7 @@ export function TextAreaInput({
 >) {
   const id = useId();
   return (
-    <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+    <div className="flex flex-col items-center justify-center w-full flex-1 text-center">
       <label className="block text-white text-sm font-bold mb-2" htmlFor={name}>
         {label}
       </label>

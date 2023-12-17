@@ -15,7 +15,7 @@ export default async function Page() {
         <p className="mt-3 text-2xl">Upload photos</p>
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           <form
-            className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
+            className="flex flex-col items-center justify-center w-full flex-1 container text-center"
             action={onImageSubmit}
           >
             <TextInput label="Name" name="name" required />
